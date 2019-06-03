@@ -1,0 +1,3 @@
+[submodule "keras-deep-graph-learning"]
+	path = keras-deep-graph-learning
+	url = https://github.com/vermaMachineLearning/keras-deep-graph-learning.git
