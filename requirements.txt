@@ -1,3 +1,5 @@
 numpy
 keras
 git+https://github.com/tkipf/keras-gcn.git
+tensorflow
+numpy
