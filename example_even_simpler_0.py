@@ -11,8 +11,9 @@ import keras.backend as K
 from keras.utils import to_categorical
 
 print("Creating our simple sample data...")
-A = np.array([[1,1,1], [1,0,0], [1,0,0]])
-X = np.array([[1,2,10], [4,2,10], [0,2,11]]) # features, whatever we have there...
+A = np.array([[0,1,5], [1,0,0], [5,0,0]])
+print(A)
+X = np.array([[1,2,10], [4,3,10], [0,2,11]]) # features, whatever we have there...
 
 # Notice, if we set A = identity matrix, then we'd effectively assume no edges and just do a basic
 # MLP on the features.

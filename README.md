@@ -1,4 +1,4 @@
-# Easy AI
+# GraphCNN Examples in Keras
 
 Easy AI is a set of packages and utilities to make it easy to use some
 "standard" machine learning models already out there.
