@@ -11,8 +11,8 @@ import keras.backend as K
 from keras.utils import to_categorical
 
 print("Creating our simple sample data...")
-A = np.array([[1,1,1], [1,1,0], [1,0,0]])
-X = np.array([[1,0,0], [1,1,0], [4,5,6]]) # features, whatever we have there...
+A = np.array([[1,1,1], [1,0,0], [1,0,0]])
+X = np.array([[1,2,10], [4,2,10], [0,2,11]]) # features, whatever we have there...
 
 # Notice, if we set A = identity matrix, then we'd effectively assume no edges and just do a basic
 # MLP on the features.
@@ -31,7 +31,7 @@ train_on_weight= np.array([1,1,0])
 print("Now we won't do any fancy preprocessing, just basic training.")
 
 NUM_FILTERS = 1
-graph_conv_filters = A
+graph_conv_filters =  A # you may try np.eye(3)
 graph_conv_filters = K.constant(graph_conv_filters)
 
 model = Sequential()
@@ -40,7 +40,7 @@ model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.01), metrics=['acc'])
 model.summary()
 
-model.fit(X, Y, batch_size=A.shape[0], sample_weight=train_on_weight, epochs=100, shuffle=False, verbose=0)
+model.fit(X, Y, batch_size=A.shape[0], sample_weight=train_on_weight, epochs=200, shuffle=False, verbose=0)
 Y_pred = model.predict(X, batch_size=A.shape[0])
-np.argmax(Y_pred, axis=1)
+print(np.argmax(Y_pred, axis=1))
 
