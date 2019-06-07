@@ -68,6 +68,8 @@ for i in [1,2,3]:
         _, test_acc = utils.evaluate_preds(Y_pred, [y_test], [idx_test])
         print("Epoch: {:04d}".format(epoch), "train_acc= {:.4f}".format(train_acc[0]), "test_acc= {:.4f}".format(test_acc[0]))
 
+# i = 1
+# Epoch: 0099 train_acc= 1.0000 test_acc= 0.5130
 
 # i = 2
 # Epoch: 0017 train_acc= 1.0000 test_acc= 0.6950
